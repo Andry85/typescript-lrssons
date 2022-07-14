@@ -1,3 +1,2 @@
-enum Season { Winter, Spring, Summer, Autumn };
-let current: number = Season.Winter;
-console.log(current);
+let lst: NodeList = document.querySelectorAll('div');
+console.log(lst);
