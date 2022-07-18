@@ -1,2 +1,2 @@
-var lst = document.querySelectorAll('div');
-console.log(lst);
+var time = { hour: 12, minute: 22, second: 50 };
+console.log(time);
