@@ -1,2 +1,13 @@
-var time = { hour: 12, minute: 22, second: 50 };
-console.log(time);
+;
+var employee = {
+    name: 'andrew',
+    potision: {
+        name: 'programmer',
+        salary: 1000
+    },
+    addr: {
+        country: 'Belarus',
+        city: 'minsk'
+    }
+};
+console.log(employee);

@@ -1,9 +1,26 @@
-interface Time {
-	hour: number,
-	minute: number,
-	second: number
+interface Employee {
+	name: string,
+	potision: {
+		name: string,
+		salary: number,
+	},
+	addr: {
+		country: string,
+		city: string
+	}
 
+};
 
-let time: Time = {hour: 12, minute: 22, second: 50};
+let employee: Employee = {
+	name: 'andrew',
+	potision: {
+		name: 'programmer',
+		salary: 1000,
+	},
+	addr: {
+		country: 'Belarus',
+		city: 'minsk'
+	}
+};
 
-console.log(time);
+console.log(employee);
