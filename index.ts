@@ -1,26 +1,34 @@
+interface Position {
+	name: string,
+	salary: number
+}
+
+interface Addres {
+	country: string,
+	city: string
+}
+
 interface Employee {
 	name: string,
-	potision: {
-		name: string,
-		salary: number,
-	},
-	addr: {
-		country: string,
-		city: string
-	}
+	potision: Position,
+	addr: Addres
+}
 
-};
+let potision: Position = {
+	name: 'programmer',
+	salary: 1000
+}
+
+let addr: Addres = {
+	country: 'Belarus',
+	city: 'minsk'
+}
 
 let employee: Employee = {
 	name: 'andrew',
-	potision: {
-		name: 'programmer',
-		salary: 1000,
-	},
-	addr: {
-		country: 'Belarus',
-		city: 'minsk'
-	}
+	potision: potision,
+	addr: addr
 };
+
 
 console.log(employee);
