@@ -32,3 +32,21 @@ let employee: Employee = {
 
 
 console.log(employee);
+
+type Func = (num: number) => number;
+
+function make(arr: number[], func: Func): number {
+	let sum = 0;
+	
+	for (let elem of arr) {
+		sum += func(elem);
+	}
+	
+	return sum;
+}
+
+let res: number = make([1, 2, 3], function(num): number {
+	return num ** 2;
+});
+
+console.log(res);
