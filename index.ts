@@ -43,4 +43,22 @@ function configure(x: Options | 'auto' | 'automatic') {
 }
 configure({ width: 100 })
 configure('auto')
-configure('automatic')
+configure('automatic');
+
+function padLeft(padding: number | string, input: string) {
+  if (typeof padding === 'number') {
+    return new Array(padding + 1).join(' ') + input
+    // (parameter) padding: number
+  }
+  return padding + input
+  // (parameter) padding: string
+}
+
+console.log(padLeft(100, 'teset'));
+
+interface Shape {
+  kind: 'circle' | 'square'
+  radius?: number
+  sideLength: number
+}
+

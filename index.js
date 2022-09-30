@@ -8,3 +8,18 @@ function getBear(animal) {
     console.log("Food animal: ".concat(animal.honey));
 }
 var bear = getBear({ name: 'Medvid', honey: true });
+function configure(x) {
+    // ...
+}
+configure({ width: 100 });
+configure('auto');
+configure('automatic');
+function padLeft(padding, input) {
+    if (typeof padding === 'number') {
+        return new Array(padding + 1).join(' ') + input;
+        // (parameter) padding: number
+    }
+    return padding + input;
+    // (parameter) padding: string
+}
+console.log(padLeft(100, 'teset'));
