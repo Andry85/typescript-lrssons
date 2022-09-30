@@ -1,26 +1,10 @@
-var potision = {
-    name: 'programmer',
-    salary: 1000
-};
-var addr = {
-    country: 'Belarus',
-    city: 'minsk'
-};
-var employee = {
-    name: 'andrew',
-    potision: potision,
-    addr: addr
-};
-console.log(employee);
-function make(arr, func) {
-    var sum = 0;
-    for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
-        var elem = arr_1[_i];
-        sum += func(elem);
-    }
-    return sum;
+function printCoords(pt) {
+    console.log("\u0417\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u043A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u044B 'x': ".concat(pt.x));
+    console.log("\u0417\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u043A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u044B 'y': ".concat(pt.y));
 }
-var res = make([1, 2, 3], function (num) {
-    return Math.pow(num, 2);
-});
-console.log(res);
+printCoords({ x: 3, y: 7 });
+function getBear(animal) {
+    console.log("Name animal': ".concat(animal.name));
+    console.log("Food animal: ".concat(animal.honey));
+}
+var bear = getBear({ name: 'Medvid', honey: true });

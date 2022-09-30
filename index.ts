@@ -1,52 +1,46 @@
-interface Position {
-	name: string,
-	salary: number
+interface Point {
+  x: number
+  y: number
 }
 
-interface Addres {
-	country: string,
-	city: string
+function printCoords(pt: Point) {
+  console.log(`Значение координаты 'x': ${pt.x}`)
+  console.log(`Значение координаты 'y': ${pt.y}`)
 }
 
-interface Employee {
-	name: string,
-	potision: Position,
-	addr: Addres
+printCoords({ x: 3, y: 7 })
+
+
+// interface Animal {
+//   name: string
+// }
+
+// interface Bear extends Animal {
+//   honey: boolean
+// }
+
+type Animal = {
+  name: string
 }
 
-let potision: Position = {
-	name: 'programmer',
-	salary: 1000
+type Bear = Animal & {
+  honey: boolean
 }
 
-let addr: Addres = {
-	country: 'Belarus',
-	city: 'minsk'
+function getBear(animal: Bear): void {
+  console.log(`Name animal': ${animal.name}`)
+  console.log(`Food animal: ${animal.honey}`)
 }
 
-let employee: Employee = {
-	name: 'andrew',
-	potision: potision,
-	addr: addr
-};
+const bear = getBear({name: 'Medvid', honey: true})
 
 
-console.log(employee);
-
-type Func = (num: number) => number;
-
-function make(arr: number[], func: Func): number {
-	let sum = 0;
-	
-	for (let elem of arr) {
-		sum += func(elem);
-	}
-	
-	return sum;
+interface Options {
+  width: number
 }
-
-let res: number = make([1, 2, 3], function(num): number {
-	return num ** 2;
-});
-
-console.log(res);
+function configure(x: Options | 'auto' | 'automatic') {
+  // ...
+}
+configure({ width: 100 })
+configure('auto')
+configure('automatic')
