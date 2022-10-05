@@ -62,3 +62,116 @@ interface Shape {
   sideLength: number
 }
 
+
+function greeter(fn: (a: string) => void) {
+  fn('Hello, World')
+}
+
+function printToConsole(s: string) {
+  console.log(s)
+}
+
+greeter(printToConsole);
+
+function firstElement<Type>(arr: Type[]): Type {
+  return arr[0];
+}
+
+const s = firstElement(['a', 'b', 'c']);
+
+console.log(s);
+
+
+
+function showMan(name: string): string {
+  return `I am ${name}`;
+}
+
+const myMan = showMan('Peter');
+
+console.log(myMan);
+
+
+function showFirstDayOfWeek<AType>(arr: AType[]): AType {
+  return arr[0];
+}
+
+const firstday = showFirstDayOfWeek(['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']);
+
+console.log(firstday);
+
+type voidFn = () => void
+
+const f1: voidFn = () => {
+  return true
+}
+
+const v1 = f1();
+
+console.log(v1);
+
+interface PaintOptions {
+  shape: Shape
+  xPos?: number
+  yPos?: number
+}
+
+function paintShape({ shape, xPos = 0, yPos = 0 }: PaintOptions) {
+  console.log('x coordinate at', xPos)
+  // var xPos: number
+  console.log('y coordinate at', yPos)
+  // var yPos: number
+  // ...
+}
+
+
+interface PersonType {
+  readonly age: number
+}
+
+function showUserInfo(obg: PersonType) {
+
+  console.log(obg.age);
+
+
+}
+
+showUserInfo({age: 25});
+
+interface Car {
+  model?: string;
+  marka?: string;
+  yearProduction?: number;
+  price: number;
+}
+
+interface Buss extends Car {
+  seat: number;
+}
+
+function showBus (obj: Buss) {
+  console.log(obj.seat)
+}
+
+showBus({
+  price: 2000,
+  seat: 8
+});
+
+
+interface Colorful {
+  color: string
+}
+
+interface Circle {
+  radius: number
+}
+
+type ColorfulCircle = Colorful & Circle;
+
+function draw(circle: ColorfulCircle) {
+  console.log(`Цвет круга: ${circle.color}`)
+  console.log(`Радиус круга: ${circle.radius}`)
+}
+
+draw({ color: 'blue', radius: 42 })
